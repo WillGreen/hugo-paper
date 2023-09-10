@@ -7,7 +7,7 @@
 <h1 class="mb-4">{{ if eq .Type "categories" }}{{ .Title }}</h1>
 {{ end }}
 {{ else }}
-<p><em>Welcome to <strong>SystemTalk</strong>. Exploring the history of systems design.</em></p>
+<p class="mb-20"><em>Welcome to <strong>{{ .Title }}</strong>. {{ site.Params.description }}</em></p>
 {{ end }}
 
 <!-- $pages -->
