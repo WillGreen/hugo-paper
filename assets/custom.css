@@ -1,1 +1,13 @@
 /* Place custom css here. */
+
+.pt-4 {
+    padding-top: 1rem;
+}
+
+.pb-4 {
+    padding-bottom: 1rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}

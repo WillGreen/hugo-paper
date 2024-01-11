@@ -1,8 +1,13 @@
 {{ define "main" }}
 
-<!-- Tag Title -->
+<!-- Title -->
 {{ if and .Title (eq .Type "tags") }}
-<h1 class="mb-16">#{{ .Title }}</h1>
+<h1 class="mb-4">{{ if eq .Type "tags" }}Tag: {{end }}{{ .Title }}</h1>
+{{ else if and .Title (eq .Type "categories") }}
+<h1 class="mb-4">{{ if eq .Type "categories" }}{{ .Title }}</h1>
+{{ end }}
+{{ else }}
+<p><em>Welcome to <strong>SystemTalk</strong>. Exploring the history of systems design.</em></p>
 {{ end }}
 
 <!-- $pages -->
@@ -55,7 +60,7 @@
   {{ end }}
   <h2 class="!my-0 pb-1 font-bold !leading-none">{{ .Title }}</h2>
   <time class="text-sm antialiased opacity-60"
-    >{{ .Date | time.Format ":date_medium" }}</time
+    >{{ .Date | time.Format "02 Jan 2006" }}</time
   >
   <a class="absolute inset-0 text-[0]" href="{{ .Permalink }}">{{ .Title }}</a>
 </section>

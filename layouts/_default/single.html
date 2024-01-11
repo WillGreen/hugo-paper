@@ -1,20 +1,20 @@
 {{ define "main" }}
 
 <article>
-  <header class="mb-16">
+  <header class="mb-4">
     <h1 class="!my-0 pb-2.5">{{ .Title }}</h1>
 
     {{ if ne .Type "page" }}
     <div class="text-sm antialiased opacity-60">
       {{ if .Date }}
-      <time>{{ .Date | time.Format ":date_medium" }}</time>
-      {{ end }}<!---->
-      {{ $single_author := or .Params.Author site.Author.name }}
-      <!---->
-      {{ if $single_author }}
+      Published
+      <time>{{ .Date | time.Format "02 Jan 2006" }}</time>
+      {{ if ne .Date .Lastmod }}
       <span class="mx-1">&middot;</span>
-      <span>{{ $single_author }}</span>
+      <span>Updated
+      <time>{{ .Lastmod | time.Format "02 Jan 2006" }}</time></span>
       {{ end }}
+      {{ end }}<!---->
     </div>
     {{ end }}
   </header>

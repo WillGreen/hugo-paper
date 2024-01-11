@@ -83,6 +83,10 @@
   <!-- Production -->
   {{ if or hugo.IsProduction (eq site.Params.env "production") }}
   <!---->
+  {{ if .Site.Params.fathomAnalytics.siteId }}
+  <script src="https://cdn-eu.usefathom.com/script.js" data-site="{{ .Site.Params.fathomAnalytics.siteId }}" defer></script>
+  {{ end }}
+  <!---->
   {{ template "_internal/google_analytics.html" . }}
   <!---->
   {{ template "_internal/schema.html" . }}
