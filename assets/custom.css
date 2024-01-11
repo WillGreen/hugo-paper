@@ -1,1 +1,40 @@
 /* Place custom css here. */
+
+/* additional sizes used by Flux designs */
+.max-w-4xl {
+    max-width: 56rem;
+}
+
+.pt-4 {
+    padding-top: 1rem;
+}
+
+.pb-4 {
+    padding-bottom: 1rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+/* no quote characters around blockquotes */
+.prose :where(blockquote p:first-of-type):not(:where([class~="not-prose"] *))::before {
+    content: none;
+}
+.prose :where(blockquote p:last-of-type):not(:where([class~="not-prose"] *))::after {
+content: none;
+}
+
+/* no backticks in inline code output */
+.prose :where(code):not(:where([class~="not-prose"] *))::before {
+content: none;
+}
+.prose :where(code):not(:where([class~="not-prose"] *))::after {
+content: none;
+}
+
+/* don't leave too much white space around images, especially below for captions */
+.prose img {
+margin-top: 1rem;
+margin-bottom: 0.25rem;
+}

@@ -43,7 +43,11 @@
     {{ partial "header.html" . }}
 
     <main
-      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+      {{ if site.Params.wide_layout }}
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-4xl px-8 pb-4 pt-4 dark:prose-invert"
+      {{ else }}
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-4 pt-4 dark:prose-invert"
+      {{ end }}
     >
       {{ block "main" . }}{{ end }}
     </main>
