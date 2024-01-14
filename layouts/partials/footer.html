@@ -6,7 +6,7 @@
   {{ end }}
 >
   <div class="mr-auto">
-    <a class="link" href="{{ `` | absURL }}">{{ site.Title }}</a>
-    &copy; {{ now.Year }} Will Green. {{ site.Params.description | default (print `A personal blog`) }}"
+    <a class="link" href="{{ `` | absURL }}">{{ site.Title }}</a>: {{ site.Params.description | default (print `A personal blog`) }}
+    &copy; {{ now.Year }} Will Green. 
   </div>
 </footer>
