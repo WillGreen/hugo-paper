@@ -63,7 +63,7 @@
     >{{ .Date | time.Format "02 Jan 2006" }}</time
   >
   <a class="absolute inset-0 text-[0]" href="{{ .Permalink }}">{{ .Title }}</a>
-  <p>{{ .Summary }}</p>
+  <p>{{ .Summary }} <a href="{{ .Permalink }}">Read More...</a></p>
 </section>
 {{ end }}
 
